@@ -1,70 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requisition Form</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bring Out Permit Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Requisition Form</h1>
-        
-        <form id="requisition-form">
-            <label for="requisitioner-name">Requisitioner Name:</label>
-            <input type="text" id="requisitioner-name" required>
+  <div class="container">
+    <h1>Bring Out Permit Form</h1>
+    <form id="requisition-form">
+      <!-- Requester Info -->
+      <label for="requisitioner-name">Requisitioner Name:</label>
+      <input type="text" id="requisitioner-name" required>
 
-            <label for="company-department">Company/Department:</label>
-            <input type="text" id="company-department" required>
+      <label for="company-department">Company/Department:</label>
+      <input type="text" id="company-department" required>
 
-            <label for="date-requested">Date Requested:</label>
-            <input type="date" id="date-requested" value="" required disabled>
+      <label for="date-requested">Date Requested:</label>
+      <input type="date" id="date-requested" required disabled>
 
-            <label for="date-approved">Date Approved:</label>
-            <input type="date" id="date-approved" required disabled>
+      <label for="date-approved">Date Approved:</label>
+      <input type="date" id="date-approved" required disabled>
 
-            <label for="validity-date">Validity Date (Optional):</label>
-            <input type="date" id="validity-date">
+      <label for="validity-date">Validity Date (Optional):</label>
+      <input type="date" id="validity-date">
 
-            <h3>List of Items to Bring Out:</h3>
-            <table id="items-table">
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Item Serial No. (Optional)</th>
-                    <th>Remarks</th>
-                </tr>
-                <tr>
-                    <td><input type="text" placeholder="Item Name"></td>
-                    <td><input type="number" placeholder="Quantity"></td>
-                    <td><input type="text" placeholder="Serial No."></td>
-                    <td><input type="text" placeholder="Remarks"></td>
-                </tr>
-            </table>
-            <button type="button" id="add-item">Add Item</button>
+      <!-- Items Table -->
+      <h3>List of Items</h3>
+      <table id="items-table">
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Serial No. (Optional)</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="Item Name"></td>
+          <td><input type="number" placeholder="Quantity"></td>
+          <td><input type="text" placeholder="Serial No."></td>
+          <td><input type="text" placeholder="Remarks"></td>
+        </tr>
+      </table>
+      <button type="button" id="add-item">Add Item</button>
 
-            <h3>Approvals</h3>
-            <label for="section-head">Noted by Section Head:</label>
-            <input type="checkbox" id="section-head">
+      <!-- Approvals -->
+      <h3>Approvals</h3>
+      <label><input type="checkbox" id="section-head"> Section Head</label>
+      <label><input type="checkbox" id="department-gm"> Department GM</label>
+      <label><input type="checkbox" id="verified-by"> GS Section</label>
+      <label><input type="checkbox" id="approved-by"> GM for Admin</label>
+      <label><input type="checkbox" id="inspected-by"> Guard (Optional)</label>
 
-            <label for="department-gm">Noted by Department GM:</label>
-            <input type="checkbox" id="department-gm">
+      <div id="message"></div>
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+  </div>
 
-            <label for="verified-by">Verified by GS Section:</label>
-            <input type="checkbox" id="verified-by">
-
-            <label for="approved-by">Approved by GM for Admin:</label>
-            <input type="checkbox" id="approved-by">
-
-            <label for="inspected-by">Inspected by Guard (Optional):</label>
-            <input type="checkbox" id="inspected-by">
-
-            <div id="message"></div>
-            
-            <button type="submit" id="submit-btn">Submit Requisition</button>
-        </form>
-    </div>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
